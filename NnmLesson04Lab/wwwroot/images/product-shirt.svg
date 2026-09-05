@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360">
+  <rect width="480" height="360" fill="#e8f3ff"/>
+  <path d="M165 95l45-25c12 18 48 18 60 0l45 25 50 65-55 35-25-35v125H195V160l-25 35-55-35z" fill="#2f80ed"/>
+  <path d="M210 70c10 22 50 22 60 0" fill="none" stroke="#fff" stroke-width="10"/>
+  <text x="240" y="330" text-anchor="middle" font-family="Arial" font-size="25" fill="#174a7e">Áo thun nam</text>
+</svg>

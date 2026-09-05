@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360">
+  <rect width="480" height="360" fill="#edf7f2"/>
+  <path d="M215 45h50l12 95h-74zM203 220h74l-12 85h-50z" fill="#384c44"/>
+  <circle cx="240" cy="180" r="72" fill="#f8f9fa" stroke="#384c44" stroke-width="14"/>
+  <path d="M240 180v-40M240 180l32 18" stroke="#384c44" stroke-width="8" stroke-linecap="round"/>
+  <text x="240" y="335" text-anchor="middle" font-family="Arial" font-size="25" fill="#294239">Đồng hồ nam</text>
+</svg>

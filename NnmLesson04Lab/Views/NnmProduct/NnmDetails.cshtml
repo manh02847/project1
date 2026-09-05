@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+    var product = ViewBag.NnmProduct as NnmProduct;
+    var category = ViewBag.NnmCategory as NnmCategory;
+}
+
+@if (product != null)
+{
+    <h2>Chi tiết sản phẩm</h2>
+    <div class="row">
+        <div class="col-md-5">
+            <img src="@product.Image" alt="@product.Name" class="w-100 nnm-detail-image" />
+        </div>
+        <div class="col-md-7">
+            <h3>Sản phẩm: @product.Name</h3>
+            <p>Danh mục: @category?.Name</p>
+            <p>Giá gốc: <del>@product.Price.ToString("N0") đ</del></p>
+            <p>Giá mới: <strong class="text-danger">@product.SalePrice.ToString("N0") đ</strong></p>
+            <p>Mô tả: @product.Description</p>
+            <p>Trạng thái: @(product.Status ? "Còn hàng" : "Hết hàng")</p>
+            <p>Ngày đăng: @product.CreatedAt.ToString("dd/MM/yyyy")</p>
+            <a asp-route="nnmproduct" class="btn btn-danger">Về danh sách</a>
+        </div>
+    </div>
+}

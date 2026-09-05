@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360">
+  <rect width="480" height="360" fill="#fff5e6"/>
+  <path d="M150 145h180l25 145H125z" fill="#8a5a44"/>
+  <path d="M188 150c0-85 104-85 104 0" fill="none" stroke="#5f3d2e" stroke-width="16"/>
+  <circle cx="240" cy="220" r="13" fill="#e9c46a"/>
+  <text x="240" y="330" text-anchor="middle" font-family="Arial" font-size="25" fill="#66412f">Túi xách thời trang</text>
+</svg>

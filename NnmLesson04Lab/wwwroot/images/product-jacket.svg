@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360">
+  <rect width="480" height="360" fill="#fff0f5"/>
+  <path d="M168 92l48-24c10 18 38 18 48 0l48 24 48 73-48 30-22-38v132H188V157l-22 38-48-30z" fill="#df5b8c"/>
+  <path d="M240 86v203M205 150h70" stroke="#fff" stroke-width="8"/>
+  <text x="240" y="330" text-anchor="middle" font-family="Arial" font-size="25" fill="#8e3154">Áo khoác nữ</text>
+</svg>
