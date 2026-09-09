@@ -1,0 +1,16 @@
+@model IEnumerable<Product>
+
+<div class="row g-3">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="~/icons/@item.Image" class="card-img-top p-3" alt="@item.Name" height="180" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Price.ToString("N0") VNĐ</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
