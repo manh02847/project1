@@ -1,0 +1,61 @@
+@model IEnumerable<NnmLesson07Models.Models.DataModels.NnmMember>
+
+@{
+    ViewData["Title"] = "Danh sách thành viên";
+}
+
+<div class="card p-3">
+    <h1>@ViewData["Title"]</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary my-1">Thêm mới</a>
+    </p>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NnmMemberId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NnmUserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NnmPassword)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NnmFullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NnmEmail)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NnmMemberId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NnmUserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NnmPassword)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NnmFullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NnmEmail)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
