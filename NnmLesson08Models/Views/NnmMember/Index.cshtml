@@ -1,0 +1,63 @@
+﻿@model IEnumerable<NnmLesson08Models.Models.NnmMember>
+
+@{
+    ViewData["Title"] = "Danh sách thành viên";
+}
+
+<div class="card p-3">
+    <div class="card-header">
+        <h1>@ViewData["Title"]</h1> 
+        <a asp-action="NnmCreate">Thêm  mới</a>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NnmMemberId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NnmUserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NnmPassword)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NnmFullName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NnmEmail)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NnmMemberId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NnmUserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NnmPassword)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NnmFullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NnmEmail)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sửa", "NnmEdit", new {  id=item.NnmMemberId }) |
+                        @Html.ActionLink("Xem chi tiết", "NnmDetails", new { id = item.NnmMemberId }) |
+                            @Html.ActionLink("Xóa", "NnmDelete", new { id = item.NnmMemberId })
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

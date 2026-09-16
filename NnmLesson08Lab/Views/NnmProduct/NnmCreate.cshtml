@@ -1,0 +1,59 @@
+@model NnmLesson08Lab.Models.NnmProduct
+
+@{
+    ViewData["Title"] = "Thêm sản phẩm";
+}
+
+<h1>Thêm sản phẩm</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="NnmCreate" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="NnmProductName" class="form-label"></label>
+                <input asp-for="NnmProductName" class="form-control" />
+                <span asp-validation-for="NnmProductName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NnmPrice" class="form-label"></label>
+                <input asp-for="NnmPrice" class="form-control" />
+                <span asp-validation-for="NnmPrice" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NnmSalePrice" class="form-label"></label>
+                <input asp-for="NnmSalePrice" class="form-control" />
+                <span asp-validation-for="NnmSalePrice" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NnmCategoryId" class="form-label"></label>
+                <select asp-for="NnmCategoryId" asp-items="ViewBag.NnmCategories" class="form-select">
+                    <option value="">-- Chọn danh mục --</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NnmCreatedDate" class="form-label"></label>
+                <input asp-for="NnmCreatedDate" class="form-control" />
+            </div>
+            <div class="mb-3 form-check">
+                <input asp-for="NnmStatus" class="form-check-input" />
+                <label asp-for="NnmStatus" class="form-check-label"></label>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NnmImage" class="form-label"></label>
+                <input type="file" name="nnmImageFile" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="NnmDescription" class="form-label"></label>
+                <textarea asp-for="NnmDescription" class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Thêm mới</button>
+            <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

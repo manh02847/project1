@@ -1,0 +1,51 @@
+@model IEnumerable<NnmLesson08Lab.Models.NnmProduct>
+@using NnmLesson08Lab.Models
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+<h1>Danh sách sản phẩm</h1>
+
+<p><a asp-action="NnmCreate" class="btn btn-primary">Thêm mới</a></p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Mã</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Giá khuyến mại</th>
+            <th>Danh mục</th>
+            <th>Trạng thái</th>
+            <th>Ngày tạo</th>
+            <th>Hình ảnh</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NnmProductId</td>
+                <td>@item.NnmProductName</td>
+                <td>@item.NnmPrice.ToString("N0")</td>
+                <td>@item.NnmSalePrice.ToString("N0")</td>
+                <td>@NnmDataLocal.NnmGetCategoryName(item.NnmCategoryId)</td>
+                <td>@(item.NnmStatus ? "Hoạt động" : "Không hoạt động")</td>
+                <td>@item.NnmCreatedDate.ToString("dd/MM/yyyy")</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.NnmImage))
+                    {
+                        <img src="@item.NnmImage" alt="@item.NnmProductName" width="70" />
+                    }
+                </td>
+                <td>
+                    <a asp-action="NnmEdit" asp-route-id="@item.NnmProductId">Sửa</a> |
+                    <a asp-action="NnmDetails" asp-route-id="@item.NnmProductId">Chi tiết</a> |
+                    <a asp-action="NnmDelete" asp-route-id="@item.NnmProductId">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+﻿@model NnmLesson08Models.Models.NnmMember
+
+@{
+    ViewData["Title"] = "Thông tin chi tiết thành viên";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>NnmMember</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NnmMemberId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NnmMemberId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NnmUserName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NnmUserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NnmPassword)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NnmPassword)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NnmFullName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NnmFullName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NnmEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NnmEmail)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Sửa", "NnmEdit", new { id = Model.NnmMemberId }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+
