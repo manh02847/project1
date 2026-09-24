@@ -1,0 +1,29 @@
+@model NnmLesson09Annotation.Models.DataModels.NnmMember
+
+@{
+    ViewData["Title"] = "Xóa thành viên";
+}
+
+<h2>@ViewData["Title"]</h2>
+<h4>Bạn có chắc chắn muốn xóa thành viên này?</h4>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Mã thành viên</dt>
+    <dd class="col-sm-9">@Model.NnmMemberId</dd>
+
+    <dt class="col-sm-3">Tên đăng nhập</dt>
+    <dd class="col-sm-9">@Model.NnmUserName</dd>
+
+    <dt class="col-sm-3">Họ và tên</dt>
+    <dd class="col-sm-9">@Model.NnmFullName</dd>
+
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.NnmEmail</dd>
+</dl>
+
+<form asp-action="NnmDeleted" method="post">
+    <input type="hidden" name="id" value="@Model.NnmMemberId" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</form>

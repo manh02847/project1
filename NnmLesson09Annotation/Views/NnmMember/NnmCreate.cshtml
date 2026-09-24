@@ -1,0 +1,70 @@
+@model NnmLesson09Annotation.Models.DataViewModels.NnmMemberRegister
+
+@{
+    ViewData["Title"] = "Thêm mới thành viên";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card p-3">
+            <div class="card-header">
+                <h3>@ViewData["Title"] - Data Annotation</h3>
+            </div>
+
+            <div class="card-body">
+                <form asp-action="NnmCreate" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="NnmMemberId" class="form-label"></label>
+                        <input asp-for="NnmMemberId" class="form-control" />
+                        <span asp-validation-for="NnmMemberId" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NnmUserName" class="form-label"></label>
+                        <input asp-for="NnmUserName" class="form-control" />
+                        <span asp-validation-for="NnmUserName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NnmPassword" class="form-label"></label>
+                        <input asp-for="NnmPassword" class="form-control" />
+                        <span asp-validation-for="NnmPassword" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NnmEmail" class="form-label"></label>
+                        <input asp-for="NnmEmail" class="form-control" />
+                        <span asp-validation-for="NnmEmail" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NnmPhoneNumber" class="form-label"></label>
+                        <input asp-for="NnmPhoneNumber" class="form-control" />
+                        <span asp-validation-for="NnmPhoneNumber" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NnmFullName" class="form-label"></label>
+                        <input asp-for="NnmFullName" class="form-control" />
+                        <span asp-validation-for="NnmFullName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NnmBirthday" class="form-label"></label>
+                        <input asp-for="NnmBirthday" class="form-control" />
+                        <span asp-validation-for="NnmBirthday" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Ghi lại</button>
+                    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

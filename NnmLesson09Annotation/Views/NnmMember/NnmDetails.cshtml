@@ -1,0 +1,31 @@
+@model NnmLesson09Annotation.Models.DataModels.NnmMember
+
+@{
+    ViewData["Title"] = "Chi tiết thành viên";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Mã thành viên</dt>
+    <dd class="col-sm-9">@Model.NnmMemberId</dd>
+
+    <dt class="col-sm-3">Tên đăng nhập</dt>
+    <dd class="col-sm-9">@Model.NnmUserName</dd>
+
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.NnmEmail</dd>
+
+    <dt class="col-sm-3">Số điện thoại</dt>
+    <dd class="col-sm-9">@Model.NnmPhoneNumber</dd>
+
+    <dt class="col-sm-3">Họ và tên</dt>
+    <dd class="col-sm-9">@Model.NnmFullName</dd>
+
+    <dt class="col-sm-3">Ngày sinh</dt>
+    <dd class="col-sm-9">@Model.NnmBirthday?.ToString("dd/MM/yyyy")</dd>
+</dl>
+
+<a asp-action="NnmEdit" asp-route-id="@Model.NnmMemberId" class="btn btn-primary">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>

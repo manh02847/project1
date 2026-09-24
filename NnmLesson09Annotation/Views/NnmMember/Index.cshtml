@@ -1,0 +1,44 @@
+@model IEnumerable<NnmLesson09Annotation.Models.DataModels.NnmMember>
+
+@{
+    ViewData["Title"] = "Danh sách thành viên";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>@ViewData["Title"]</h2>
+    <a asp-action="NnmCreate" class="btn btn-success">+ Thêm mới thành viên</a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+            <tr>
+                <th>Mã TV</th>
+                <th>Tên đăng nhập</th>
+                <th>Email</th>
+                <th>Số điện thoại</th>
+                <th>Họ và tên</th>
+                <th>Ngày sinh</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.NnmMemberId</td>
+                    <td>@item.NnmUserName</td>
+                    <td>@item.NnmEmail</td>
+                    <td>@item.NnmPhoneNumber</td>
+                    <td>@item.NnmFullName</td>
+                    <td>@item.NnmBirthday?.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <a asp-action="NnmEdit" asp-route-id="@item.NnmMemberId">Sửa</a> |
+                        <a asp-action="NnmDetails" asp-route-id="@item.NnmMemberId">Chi tiết</a> |
+                        <a asp-action="NnmDelete" asp-route-id="@item.NnmMemberId">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

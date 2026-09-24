@@ -1,0 +1,50 @@
+@model NnmLesson09Annotation.Models.DataModels.NnmMember
+
+@{
+    ViewData["Title"] = "Sửa thông tin thành viên";
+}
+
+<form asp-action="NnmEdit" asp-route-id="@Model.NnmMemberId" method="post">
+    <div class="card p-3">
+        <div class="card-header">
+            <h3>@ViewData["Title"]</h3>
+        </div>
+
+        <div class="card-body">
+            <input asp-for="NnmMemberId" type="hidden" />
+
+            <div class="mb-3">
+                <label asp-for="NnmUserName" class="form-label">Tên đăng nhập</label>
+                <input asp-for="NnmUserName" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NnmPassword" class="form-label">Mật khẩu</label>
+                <input asp-for="NnmPassword" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NnmEmail" class="form-label">Email</label>
+                <input asp-for="NnmEmail" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NnmPhoneNumber" class="form-label">Số điện thoại</label>
+                <input asp-for="NnmPhoneNumber" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NnmFullName" class="form-label">Họ và tên</label>
+                <input asp-for="NnmFullName" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NnmBirthday" class="form-label">Ngày sinh</label>
+                <input asp-for="NnmBirthday" type="date" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Cập nhật</button>
+            <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+        </div>
+    </div>
+</form>
