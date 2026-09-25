@@ -1,0 +1,28 @@
+@model NnmLesson10EFDbFirst.Models.NnmMember
+
+@{
+    ViewData["Title"] = "Chi tiết thành viên";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Tên đăng nhập</dt>
+    <dd class="col-sm-9">@Model.NnmUserName</dd>
+
+    <dt class="col-sm-3">Họ và tên</dt>
+    <dd class="col-sm-9">@Model.NnmFullName</dd>
+
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.NnmEmail</dd>
+
+    <dt class="col-sm-3">Số điện thoại</dt>
+    <dd class="col-sm-9">@Model.NnmPhone</dd>
+
+    <dt class="col-sm-3">Trạng thái</dt>
+    <dd class="col-sm-9">@(Model.NnmStatus == true ? "Hoạt động" : "Không hoạt động")</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>

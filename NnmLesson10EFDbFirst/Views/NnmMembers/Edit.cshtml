@@ -1,0 +1,54 @@
+@model NnmLesson10EFDbFirst.Models.NnmMember
+
+@{
+    ViewData["Title"] = "Sửa thành viên";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3">
+                <label asp-for="NnmUserName" class="form-label">Tên đăng nhập</label>
+                <input asp-for="NnmUserName" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NnmPassword" class="form-label">Mật khẩu</label>
+                <input asp-for="NnmPassword" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NnmFullName" class="form-label">Họ và tên</label>
+                <input asp-for="NnmFullName" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NnmEmail" class="form-label">Email</label>
+                <input asp-for="NnmEmail" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NnmPhone" class="form-label">Số điện thoại</label>
+                <input asp-for="NnmPhone" class="form-control" />
+            </div>
+
+            <div class="mb-3 form-check">
+                <input asp-for="NnmStatus" class="form-check-input" />
+                <label asp-for="NnmStatus" class="form-check-label">Hoạt động</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Cập nhật</button>
+            <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,41 @@
+@model IEnumerable<NnmLesson10EFDbFirst.Models.NnmMember>
+
+@{
+    ViewData["Title"] = "Danh sách thành viên";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Thêm mới</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Tên đăng nhập</th>
+            <th>Họ và tên</th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
+            <th>Trạng thái</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>@item.NnmUserName</td>
+            <td>@item.NnmFullName</td>
+            <td>@item.NnmEmail</td>
+            <td>@item.NnmPhone</td>
+            <td>@(item.NnmStatus == true ? "Hoạt động" : "Không hoạt động")</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
