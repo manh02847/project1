@@ -1,0 +1,32 @@
+﻿.hero {
+    color: white;
+    background: linear-gradient(125deg, #123c8c 0%, #3d7be0 100%);
+}
+
+.info-card {
+    padding: 1.5rem;
+    border: 1px solid #e7ecf5;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: 0 .4rem 1.2rem rgba(28, 55, 90, .06);
+}
+
+.info-card h2 { font-size: 1.25rem; margin-top: 1rem; }
+.info-card p { color: #64748b; margin-bottom: 0; }
+.icon-circle {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #2563eb;
+    font-weight: 700;
+}
+
+.table td, .table th { padding: 1rem; }
+.card { border-radius: 1rem; }
+dt { color: #64748b; }
+dd { font-weight: 600; }
+.eyebrow { color: #2563eb; font-size: .75rem; font-weight: 700; letter-spacing: .18em; }
+.footer { position: static; line-height: 1.5; padding: 1.5rem 0; }

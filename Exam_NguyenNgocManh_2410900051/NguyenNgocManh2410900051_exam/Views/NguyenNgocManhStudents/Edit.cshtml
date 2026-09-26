@@ -1,0 +1,19 @@
+@model NguyenNgocManh2410900051_exam.Models.NguyenNgocManhStudent
+@{ ViewData["Title"] = "Chỉnh sửa sinh viên"; }
+
+<h1 class="fw-bold mb-4">Chỉnh sửa sinh viên</h1>
+<div class="card border-0 shadow-sm"><div class="card-body p-4">
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div><input asp-for="Id" type="hidden" />
+    <div class="row g-3">
+        <div class="col-md-6"><label asp-for="NguyenNgocManhName" class="form-label"></label><input asp-for="NguyenNgocManhName" class="form-control" /><span asp-validation-for="NguyenNgocManhName" class="text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="NguyenNgocManhGender" class="form-label"></label><select asp-for="NguyenNgocManhGender" class="form-select"><option value="">-- Chọn giới tính --</option><option>Nam</option><option>Nữ</option><option>Khác</option></select><span asp-validation-for="NguyenNgocManhGender" class="text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="NguyenNgocManhBirthDay" class="form-label"></label><input asp-for="NguyenNgocManhBirthDay" type="date" class="form-control" /><span asp-validation-for="NguyenNgocManhBirthDay" class="text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="NguyenNgocManhEmail" class="form-label"></label><input asp-for="NguyenNgocManhEmail" type="email" class="form-control" /><span asp-validation-for="NguyenNgocManhEmail" class="text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="NguyenNgocManhPhone" class="form-label"></label><input asp-for="NguyenNgocManhPhone" class="form-control" /><span asp-validation-for="NguyenNgocManhPhone" class="text-danger"></span></div>
+        <div class="col-md-6 d-flex align-items-end"><div class="form-check mb-2"><input asp-for="NguyenNgocManhActive" class="form-check-input" /><label asp-for="NguyenNgocManhActive" class="form-check-label"></label></div></div>
+    </div>
+    <div class="mt-4 d-flex gap-2"><button class="btn btn-primary" type="submit">Lưu thay đổi</button><a class="btn btn-outline-secondary" asp-action="Index">Quay lại</a></div>
+</form>
+</div></div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

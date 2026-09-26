@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<section class="hero rounded-4 p-5 shadow-sm mb-5">
+    <span class="badge bg-light text-primary mb-3">ASP.NET CORE MVC • SQL SERVER</span>
+    <h1 class="display-5 fw-bold">Quản lý sinh viên</h1>
+    <p class="lead mb-4">Bài kiểm tra MVC của Nguyễn Ngọc Mạnh: trang thông tin sinh viên và các thao tác CRUD với cơ sở dữ liệu.</p>
+    <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-light btn-lg" asp-controller="NguyenNgocManhStudents" asp-action="Index">Xem danh sách sinh viên</a>
+        <a class="btn btn-outline-light btn-lg" asp-controller="Home" asp-action="HvtAbout">Xem thông tin của mình</a>
+    </div>
+</section>
+
+<div class="row g-4">
+    <div class="col-md-4"><div class="info-card h-100"><div class="icon-circle">01</div><h2>Thông tin sinh viên</h2><p>Hiển thị họ tên, mã sinh viên, ngày sinh, lớp và trường.</p></div></div>
+    <div class="col-md-4"><div class="info-card h-100"><div class="icon-circle">02</div><h2>Danh sách</h2><p>Xem dữ liệu sinh viên đã được lưu trong SQL Server.</p></div></div>
+    <div class="col-md-4"><div class="info-card h-100"><div class="icon-circle">03</div><h2>CRUD</h2><p>Thêm, xem chi tiết, chỉnh sửa và xóa bản ghi.</p></div></div>
+</div>
