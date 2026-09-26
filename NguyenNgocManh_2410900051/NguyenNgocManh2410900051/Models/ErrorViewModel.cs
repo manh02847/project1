@@ -1,4 +1,4 @@
-namespace NguyenNgocManh2410900051_exam.Models;
+namespace NguyenNgocManh2410900051.Models;
 
 public class ErrorViewModel
 {

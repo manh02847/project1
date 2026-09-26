@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using NguyenNgocManh2410900051_exam.Data;
+using NguyenNgocManh2410900051.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

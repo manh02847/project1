@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using NguyenNgocManh2410900051_exam.Models;
+using NguyenNgocManh2410900051.Models;
 
-namespace NguyenNgocManh2410900051_exam.Data;
+namespace NguyenNgocManh2410900051.Data;
 
 public class ExamDbContext : DbContext
 {

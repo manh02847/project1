@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using NguyenNgocManh2410900051_exam.Data;
-using NguyenNgocManh2410900051_exam.Models;
+using NguyenNgocManh2410900051.Data;
+using NguyenNgocManh2410900051.Models;
 
-namespace NguyenNgocManh2410900051_exam.Controllers;
+namespace NguyenNgocManh2410900051.Controllers;
 
 public class NguyenNgocManhStudentsController : Controller
 {

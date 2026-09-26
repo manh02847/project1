@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NguyenNgocManh2410900051_exam.Models;
+namespace NguyenNgocManh2410900051.Models;
 
 [Table("NguyenNgocManhStudent")]
 public class NguyenNgocManhStudent : IValidatableObject
