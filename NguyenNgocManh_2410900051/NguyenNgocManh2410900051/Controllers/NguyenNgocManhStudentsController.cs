@@ -7,9 +7,9 @@ namespace NguyenNgocManh2410900051.Controllers;
 
 public class NguyenNgocManhStudentsController : Controller
 {
-    private readonly ExamDbContext _context;
+    private readonly NguyenNgocManhDbContext _context;
 
-    public NguyenNgocManhStudentsController(ExamDbContext context) => _context = context;
+    public NguyenNgocManhStudentsController(NguyenNgocManhDbContext context) => _context = context;
 
     public async Task<IActionResult> Index(string? search)
     {

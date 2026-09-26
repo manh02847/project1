@@ -12,9 +12,9 @@ namespace NguyenNgocManh2410900051.Controllers
 {
     public class NguyenNgocManhEmployeesController : Controller
     {
-        private readonly ExamDbContext _context;
+        private readonly NguyenNgocManhDbContext _context;
 
-        public NguyenNgocManhEmployeesController(ExamDbContext context)
+        public NguyenNgocManhEmployeesController(NguyenNgocManhDbContext context)
         {
             _context = context;
         }

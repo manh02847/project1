@@ -3,9 +3,9 @@ using NguyenNgocManh2410900051.Models;
 
 namespace NguyenNgocManh2410900051.Data;
 
-public class ExamDbContext : DbContext
+public class NguyenNgocManhDbContext : DbContext
 {
-    public ExamDbContext(DbContextOptions<ExamDbContext> options) : base(options) { }
+    public NguyenNgocManhDbContext(DbContextOptions<NguyenNgocManhDbContext> options) : base(options) { }
 
     public DbSet<NguyenNgocManhEmployee> NguyenNgocManhEmployees { get; set; }
     public DbSet<NguyenNgocManhStudent> NguyenNgocManhStudents { get; set; }
