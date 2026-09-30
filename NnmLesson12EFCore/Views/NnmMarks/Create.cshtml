@@ -1,0 +1,31 @@
+@model NnmLesson12EFCore.Models.NnmMark
+@{ ViewData["Title"] = "Thêm điểm"; }
+<h1>@ViewData["Title"]</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <div class="mb-3">
+                <label asp-for="NnmSubjectId" class="form-label"></label>
+                <select asp-for="NnmSubjectId" asp-items="ViewBag.NnmSubjectId" class="form-select"><option value="">-- Chọn môn học --</option></select>
+                <span asp-validation-for="NnmSubjectId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NnmStudentId" class="form-label"></label>
+                <select asp-for="NnmStudentId" asp-items="ViewBag.NnmStudentId" class="form-select"><option value="">-- Chọn sinh viên --</option></select>
+                <span asp-validation-for="NnmStudentId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="NnmScore" class="form-label"></label>
+                <input asp-for="NnmScore" type="number" min="0" max="10" step="0.01" class="form-control" />
+                <span asp-validation-for="NnmScore" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Ghi lại</button>
+            <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

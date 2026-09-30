@@ -1,0 +1,28 @@
+@model NnmLesson12EFCore.Models.NnmProduct
+@{ ViewData["Title"] = "Chi tiết sản phẩm"; }
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmName)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmName)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmImage)</dt>
+    <dd class="col-sm-9">@if (!string.IsNullOrEmpty(Model.NnmImage))
+                {
+                    <img src="~/Product/@Model.NnmImage" alt="Ảnh" class="item-image" />
+                }</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmPrice)</dt>
+    <dd class="col-sm-9">@Model.NnmPrice.ToString("N0") đ</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmSalePrice)</dt>
+    <dd class="col-sm-9">@Model.NnmSalePrice.ToString("N0") đ</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStatus)</dt>
+    <dd class="col-sm-9">@(Model.NnmStatus == 1 ? "Hiển thị" : "Ẩn")</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmDescriptions)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmDescriptions)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmCategoryId)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmCategory.NnmName)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmCreatedDate)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmCreatedDate)</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>

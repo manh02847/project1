@@ -1,0 +1,26 @@
+@model NnmLesson12EFCore.Models.NnmStudent
+@{ ViewData["Title"] = "Chi tiết sinh viên"; }
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentName)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmStudentName)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentEmail)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmStudentEmail)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentPhone)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmStudentPhone)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentAddress)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmStudentAddress)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentAvatar)</dt>
+    <dd class="col-sm-9">@if (!string.IsNullOrEmpty(Model.NnmStudentAvatar))
+                {
+                    <img src="~/Student/@Model.NnmStudentAvatar" alt="Ảnh" class="item-image" />
+                }</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentBirthday)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmStudentBirthday)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmClassId)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmClass.NnmClassName)</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>

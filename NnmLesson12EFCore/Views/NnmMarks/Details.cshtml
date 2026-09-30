@@ -1,0 +1,7 @@
+@model NnmLesson12EFCore.Models.NnmMark
+@{ ViewData["Title"] = "Chi tiết điểm"; }
+<h1>@ViewData["Title"]</h1>
+
+<partial name="_Details" model="Model" />
+<a asp-action="Edit" asp-route-subjectId="@Model.NnmSubjectId" asp-route-studentId="@Model.NnmStudentId" class="btn btn-primary">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>

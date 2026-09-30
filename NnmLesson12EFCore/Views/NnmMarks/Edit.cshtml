@@ -1,0 +1,25 @@
+@model NnmLesson12EFCore.Models.NnmMark
+@{ ViewData["Title"] = "Sửa điểm"; }
+<h1>@ViewData["Title"]</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" asp-route-subjectId="@Model.NnmSubjectId" asp-route-studentId="@Model.NnmStudentId" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <input type="hidden" asp-for="NnmSubjectId" />
+            <input type="hidden" asp-for="NnmStudentId" />
+            <p><strong>Sinh viên:</strong> @Model.NnmStudent.NnmStudentName</p>
+            <p><strong>Môn học:</strong> @Model.NnmSubject.NnmSubjectName</p>
+            <div class="mb-3">
+                <label asp-for="NnmScore" class="form-label"></label>
+                <input asp-for="NnmScore" type="number" min="0" max="10" step="0.01" class="form-control" />
+                <span asp-validation-for="NnmScore" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Ghi lại</button>
+            <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

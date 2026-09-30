@@ -1,0 +1,47 @@
+@model IEnumerable<NnmLesson12EFCore.Models.NnmStudent>
+@{ ViewData["Title"] = "Danh sách sinh viên"; }
+
+<h1>@ViewData["Title"]</h1>
+<p><a asp-action="Create" class="btn btn-success">Thêm mới sinh viên</a></p>
+<div class="table-responsive">
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.NnmStudentName)</th>
+            <th>@Html.DisplayNameFor(model => model.NnmStudentEmail)</th>
+            <th>@Html.DisplayNameFor(model => model.NnmStudentPhone)</th>
+            <th>@Html.DisplayNameFor(model => model.NnmStudentAddress)</th>
+            <th>@Html.DisplayNameFor(model => model.NnmStudentAvatar)</th>
+            <th>@Html.DisplayNameFor(model => model.NnmStudentBirthday)</th>
+            <th>@Html.DisplayNameFor(model => model.NnmClassId)</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(model => item.NnmStudentName)</td>
+            <td>@Html.DisplayFor(model => item.NnmStudentEmail)</td>
+            <td>@Html.DisplayFor(model => item.NnmStudentPhone)</td>
+            <td>@Html.DisplayFor(model => item.NnmStudentAddress)</td>
+            <td>@if (!string.IsNullOrEmpty(item.NnmStudentAvatar))
+                {
+                    <img src="~/Student/@item.NnmStudentAvatar" alt="Ảnh" class="item-image" />
+                }</td>
+            <td>@Html.DisplayFor(model => item.NnmStudentBirthday)</td>
+            <td>@Html.DisplayFor(model => item.NnmClass.NnmClassName)</td>
+            <td class="crud-actions">
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Chi tiết</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Xóa</a>
+            </td>
+        </tr>
+    }
+    @if (!Model.Any())
+    {
+        <tr><td colspan="8" class="text-center">Chưa có dữ liệu</td></tr>
+    }
+    </tbody>
+</table>
+</div>

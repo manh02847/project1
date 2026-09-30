@@ -1,0 +1,22 @@
+@model NnmLesson12EFCore.Models.NnmBanner
+@{ ViewData["Title"] = "Chi tiết banner"; }
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmName)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmName)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmImage)</dt>
+    <dd class="col-sm-9">@if (!string.IsNullOrEmpty(Model.NnmImage))
+                {
+                    <img src="~/Banner/@Model.NnmImage" alt="Ảnh" class="item-image" />
+                }</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmDescription)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmDescription)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStatus)</dt>
+    <dd class="col-sm-9">@(Model.NnmStatus == 1 ? "Hiển thị" : "Ẩn")</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmCreatedDate)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmCreatedDate)</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>

@@ -1,0 +1,43 @@
+@model IEnumerable<NnmLesson12EFCore.Models.NnmBanner>
+@{ ViewData["Title"] = "Danh sách banner"; }
+
+<h1>@ViewData["Title"]</h1>
+<p><a asp-action="Create" class="btn btn-success">Thêm mới banner</a></p>
+<div class="table-responsive">
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.NnmName)</th>
+            <th>@Html.DisplayNameFor(model => model.NnmImage)</th>
+            <th>@Html.DisplayNameFor(model => model.NnmDescription)</th>
+            <th>@Html.DisplayNameFor(model => model.NnmStatus)</th>
+            <th>@Html.DisplayNameFor(model => model.NnmCreatedDate)</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(model => item.NnmName)</td>
+            <td>@if (!string.IsNullOrEmpty(item.NnmImage))
+                {
+                    <img src="~/Banner/@item.NnmImage" alt="Ảnh" class="item-image" />
+                }</td>
+            <td>@Html.DisplayFor(model => item.NnmDescription)</td>
+            <td>@(item.NnmStatus == 1 ? "Hiển thị" : "Ẩn")</td>
+            <td>@Html.DisplayFor(model => item.NnmCreatedDate)</td>
+            <td class="crud-actions">
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Chi tiết</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Xóa</a>
+            </td>
+        </tr>
+    }
+    @if (!Model.Any())
+    {
+        <tr><td colspan="6" class="text-center">Chưa có dữ liệu</td></tr>
+    }
+    </tbody>
+</table>
+</div>

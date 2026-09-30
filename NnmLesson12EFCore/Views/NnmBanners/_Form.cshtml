@@ -1,0 +1,30 @@
+@model NnmLesson12EFCore.Models.NnmBanner
+
+<div class="mb-3">
+    <label asp-for="NnmName" class="form-label"></label>
+    <input asp-for="NnmName" class="form-control" />
+    <span asp-validation-for="NnmName" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label for="NnmUpload" class="form-label">@Html.DisplayNameFor(model => model.NnmImage)</label>
+    <input type="file" name="NnmUpload" id="NnmUpload" accept=".jpg,.jpeg,.png,.gif,.webp" class="form-control" />
+    <span class="form-text">JPG, JPEG, PNG, GIF hoặc WEBP, tối đa 5 MB. Khi sửa, bỏ trống để giữ ảnh hiện tại.</span>
+    <span class="text-danger">@Html.ValidationMessage("NnmUpload")</span>
+    @if (!string.IsNullOrEmpty(Model.NnmImage))
+    {
+        <div class="mt-2"><img src="~/Banner/@Model.NnmImage" alt="Ảnh hiện tại" class="item-image" /></div>
+    }
+</div>
+<div class="mb-3">
+    <label asp-for="NnmDescription" class="form-label"></label>
+    <textarea asp-for="NnmDescription" class="form-control" rows="3"></textarea>
+    <span asp-validation-for="NnmDescription" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="NnmStatus" class="form-label"></label>
+    <select asp-for="NnmStatus" class="form-select">
+        <option value="1">Hiển thị</option>
+        <option value="0">Ẩn</option>
+    </select>
+    <span asp-validation-for="NnmStatus" class="text-danger"></span>
+</div>

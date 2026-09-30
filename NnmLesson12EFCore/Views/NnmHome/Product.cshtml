@@ -1,0 +1,33 @@
+@model IEnumerable<NnmLesson12EFCore.Models.NnmProduct>
+@{ ViewData["Title"] = "Danh sách sản phẩm"; }
+
+<h1>@ViewData["Title"]</h1>
+<div class="row g-4 mt-1">
+    @foreach (var product in Model)
+    {
+        <div class="col-sm-6 col-lg-3">
+            <div class="card h-100">
+                <img src="~/Product/@product.NnmImage" alt="@product.NnmName" class="card-img-top product-image" />
+                <div class="card-body">
+                    <h2 class="h5">@product.NnmName</h2>
+                    <p class="text-muted">@product.NnmCategory.NnmName</p>
+                    @if (product.NnmSalePrice > 0)
+                    {
+                        <p><del class="text-muted">@product.NnmPrice.ToString("N0") đ</del>
+                            <strong class="text-danger">@product.NnmSalePrice.ToString("N0") đ</strong></p>
+                    }
+                    else
+                    {
+                        <p><strong>@product.NnmPrice.ToString("N0") đ</strong></p>
+                    }
+                    <p>@product.NnmDescriptions</p>
+                    <a asp-controller="NnmProducts" asp-action="Details" asp-route-id="@product.Id" class="btn btn-sm btn-primary">Chi tiết</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@if (!Model.Any())
+{
+    <p class="alert alert-info mt-3">Chưa có sản phẩm để hiển thị.</p>
+}

@@ -1,0 +1,15 @@
+@model NnmLesson12EFCore.Models.NnmCategory
+
+<div class="mb-3">
+    <label asp-for="NnmName" class="form-label"></label>
+    <input asp-for="NnmName" class="form-control" />
+    <span asp-validation-for="NnmName" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="NnmStatus" class="form-label"></label>
+    <select asp-for="NnmStatus" class="form-select">
+        <option value="1">Hiển thị</option>
+        <option value="0">Ẩn</option>
+    </select>
+    <span asp-validation-for="NnmStatus" class="text-danger"></span>
+</div>

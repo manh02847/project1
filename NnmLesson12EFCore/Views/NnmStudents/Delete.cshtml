@@ -1,0 +1,31 @@
+@model NnmLesson12EFCore.Models.NnmStudent
+@{ ViewData["Title"] = "Xóa sinh viên"; }
+
+<h1>@ViewData["Title"]</h1>
+<p class="text-danger">Bạn có chắc muốn xóa dữ liệu này?</p>
+<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentName)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmStudentName)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentEmail)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmStudentEmail)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentPhone)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmStudentPhone)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentAddress)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmStudentAddress)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentAvatar)</dt>
+    <dd class="col-sm-9">@if (!string.IsNullOrEmpty(Model.NnmStudentAvatar))
+                {
+                    <img src="~/Student/@Model.NnmStudentAvatar" alt="Ảnh" class="item-image" />
+                }</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmStudentBirthday)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmStudentBirthday)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmClassId)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmClass.NnmClassName)</dd>
+</dl>
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</form>

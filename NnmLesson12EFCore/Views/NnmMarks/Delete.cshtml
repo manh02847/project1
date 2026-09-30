@@ -1,0 +1,9 @@
+@model NnmLesson12EFCore.Models.NnmMark
+@{ ViewData["Title"] = "Xóa điểm"; }
+<h1>@ViewData["Title"]</h1>
+<p class="text-danger">Bạn có chắc muốn xóa điểm này?</p>
+<partial name="_Details" model="Model" />
+<form asp-action="Delete" asp-route-subjectId="@Model.NnmSubjectId" asp-route-studentId="@Model.NnmStudentId" method="post">
+    <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</form>

@@ -1,0 +1,16 @@
+@model NnmLesson12EFCore.Models.NnmStdClass
+@{ ViewData["Title"] = "Xóa lớp học"; }
+
+<h1>@ViewData["Title"]</h1>
+<p class="text-danger">Bạn có chắc muốn xóa dữ liệu này?</p>
+<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmClassName)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmClassName)</dd>
+</dl>
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</form>

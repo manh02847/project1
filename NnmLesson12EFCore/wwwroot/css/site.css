@@ -1,0 +1,12 @@
+html { font-size: 14px; }
+@media (min-width: 768px) { html { font-size: 16px; } }
+html { position: relative; min-height: 100%; }
+body { margin-bottom: 80px; }
+h1 { font-size: 2rem; }
+.item-image { width: 100px; height: 80px; object-fit: contain; }
+.product-image { height: 200px; object-fit: contain; padding: 15px; background: #f8f9fa; }
+.banner-image { height: 290px; object-fit: cover; }
+.banner-caption { padding: 18px 24px; background: #f1f5fb; }
+.crud-actions { min-width: 185px; white-space: nowrap; }
+.table td { max-width: 250px; overflow-wrap: anywhere; }
+.field-validation-error { display: block; margin-top: 4px; }

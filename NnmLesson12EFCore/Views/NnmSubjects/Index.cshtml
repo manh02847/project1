@@ -1,0 +1,32 @@
+@model IEnumerable<NnmLesson12EFCore.Models.NnmSubject>
+@{ ViewData["Title"] = "Danh sách môn học"; }
+
+<h1>@ViewData["Title"]</h1>
+<p><a asp-action="Create" class="btn btn-success">Thêm mới môn học</a></p>
+<div class="table-responsive">
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.NnmSubjectName)</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(model => item.NnmSubjectName)</td>
+            <td class="crud-actions">
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Chi tiết</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Xóa</a>
+            </td>
+        </tr>
+    }
+    @if (!Model.Any())
+    {
+        <tr><td colspan="2" class="text-center">Chưa có dữ liệu</td></tr>
+    }
+    </tbody>
+</table>
+</div>

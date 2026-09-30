@@ -1,0 +1,11 @@
+@model NnmLesson12EFCore.Models.NnmSubject
+@{ ViewData["Title"] = "Chi tiết môn học"; }
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NnmSubjectName)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => Model.NnmSubjectName)</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>

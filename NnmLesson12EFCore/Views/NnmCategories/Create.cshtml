@@ -1,0 +1,19 @@
+@model NnmLesson12EFCore.Models.NnmCategory
+@{ ViewData["Title"] = "Thêm mới danh mục"; }
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <partial name="_Form" model="Model" />
+            <button type="submit" class="btn btn-primary">Ghi lại</button>
+            <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

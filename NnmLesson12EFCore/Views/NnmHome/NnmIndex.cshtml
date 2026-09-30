@@ -1,0 +1,39 @@
+@model IReadOnlyList<NnmLesson12EFCore.Models.NnmBanner>
+@{ ViewData["Title"] = "Trang chủ"; }
+
+@if (Model.Count > 0)
+{
+    <div id="nnmBanners" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @for (var i = 0; i < Model.Count; i++)
+            {
+                var banner = Model[i];
+                <div class="carousel-item @(i == 0 ? "active" : "")">
+                    <img src="~/Banner/@banner.NnmImage" class="d-block w-100 banner-image" alt="@banner.NnmName" />
+                    <div class="banner-caption">
+                        <h2>@banner.NnmName</h2>
+                        <p class="mb-0">@banner.NnmDescription</p>
+                    </div>
+                </div>
+            }
+        </div>
+        @if (Model.Count > 1)
+        {
+            <button class="carousel-control-prev" type="button" data-bs-target="#nnmBanners" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Trước</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#nnmBanners" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Tiếp</span>
+            </button>
+        }
+    </div>
+}
+
+<div class="text-center py-3">
+    <h1 class="display-5">Lesson12</h1>
+    <p class="lead">Nguyễn Ngọc Mạnh - 2410900051 - K24-CNT2</p>
+    <a asp-action="Product" class="btn btn-primary">Xem sản phẩm</a>
+    <a asp-controller="NnmStudents" asp-action="Index" class="btn btn-outline-primary">Quản lý sinh viên</a>
+</div>

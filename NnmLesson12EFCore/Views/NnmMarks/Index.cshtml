@@ -1,0 +1,26 @@
+@model IEnumerable<NnmLesson12EFCore.Models.NnmMark>
+@{ ViewData["Title"] = "Danh sách điểm"; }
+<h1>@ViewData["Title"]</h1>
+<p><a asp-action="Create" class="btn btn-success">Thêm điểm</a></p>
+<div class="table-responsive">
+<table class="table table-striped align-middle">
+    <thead><tr><th>Sinh viên</th><th>Email</th><th>Môn học</th><th>Điểm</th><th>Thao tác</th></tr></thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.NnmStudent.NnmStudentName</td>
+            <td>@item.NnmStudent.NnmStudentEmail</td>
+            <td>@item.NnmSubject.NnmSubjectName</td>
+            <td>@item.NnmScore</td>
+            <td class="crud-actions">
+                <a asp-action="Edit" asp-route-subjectId="@item.NnmSubjectId" asp-route-studentId="@item.NnmStudentId" class="btn btn-sm btn-primary">Sửa</a>
+                <a asp-action="Details" asp-route-subjectId="@item.NnmSubjectId" asp-route-studentId="@item.NnmStudentId" class="btn btn-sm btn-info">Chi tiết</a>
+                <a asp-action="Delete" asp-route-subjectId="@item.NnmSubjectId" asp-route-studentId="@item.NnmStudentId" class="btn btn-sm btn-danger">Xóa</a>
+            </td>
+        </tr>
+    }
+    @if (!Model.Any()) { <tr><td colspan="5" class="text-center">Chưa có điểm</td></tr> }
+    </tbody>
+</table>
+</div>

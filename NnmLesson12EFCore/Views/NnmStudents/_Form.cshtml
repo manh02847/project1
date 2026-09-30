@@ -1,0 +1,44 @@
+@model NnmLesson12EFCore.Models.NnmStudent
+
+<div class="mb-3">
+    <label asp-for="NnmStudentName" class="form-label"></label>
+    <input asp-for="NnmStudentName" class="form-control" />
+    <span asp-validation-for="NnmStudentName" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="NnmStudentEmail" class="form-label"></label>
+    <input asp-for="NnmStudentEmail" class="form-control" />
+    <span asp-validation-for="NnmStudentEmail" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="NnmStudentPhone" class="form-label"></label>
+    <input asp-for="NnmStudentPhone" class="form-control" />
+    <span asp-validation-for="NnmStudentPhone" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="NnmStudentAddress" class="form-label"></label>
+    <input asp-for="NnmStudentAddress" class="form-control" />
+    <span asp-validation-for="NnmStudentAddress" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label for="NnmUpload" class="form-label">@Html.DisplayNameFor(model => model.NnmStudentAvatar)</label>
+    <input type="file" name="NnmUpload" id="NnmUpload" accept=".jpg,.jpeg,.png,.gif,.webp" class="form-control" />
+    <span class="form-text">JPG, JPEG, PNG, GIF hoặc WEBP, tối đa 5 MB. Khi sửa, bỏ trống để giữ ảnh hiện tại.</span>
+    <span class="text-danger">@Html.ValidationMessage("NnmUpload")</span>
+    @if (!string.IsNullOrEmpty(Model.NnmStudentAvatar))
+    {
+        <div class="mt-2"><img src="~/Student/@Model.NnmStudentAvatar" alt="Ảnh hiện tại" class="item-image" /></div>
+    }
+</div>
+<div class="mb-3">
+    <label asp-for="NnmStudentBirthday" class="form-label"></label>
+    <input asp-for="NnmStudentBirthday" type="date" value="@(Model.NnmStudentBirthday == DateTime.MinValue ? "" : Model.NnmStudentBirthday.ToString("yyyy-MM-dd"))" class="form-control" />
+    <span asp-validation-for="NnmStudentBirthday" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="NnmClassId" class="form-label"></label>
+    <select asp-for="NnmClassId" asp-items="ViewBag.NnmClassId" class="form-select">
+        <option value="">-- Chọn --</option>
+    </select>
+    <span asp-validation-for="NnmClassId" class="text-danger"></span>
+</div>
