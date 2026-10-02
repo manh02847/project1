@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<section class="hero">
+    <p class="eyebrow">ASP.NET Core MVC</p>
+    <h1>Lesson13 - Tìm hiểu về Layout</h1>
+    <p>Thực hành Layout, _ViewStart, Custom Layout, CSS, JavaScript và Area.</p>
+    <div class="hero-actions">
+        <a class="button" asp-controller="NnmProducts" asp-action="Index">Mở Custom Layout</a>
+        <a class="button button-light" asp-area="Admin" asp-controller="Home" asp-action="Index">Mở Area Admin</a>
+    </div>
+</section>
+
+<section class="feature-grid">
+    <article>
+        <h2>Layout mặc định</h2>
+        <p>Được khai báo trong Views/_ViewStart.cshtml và dùng chung cho các View.</p>
+    </article>
+    <article>
+        <h2>Custom Layout</h2>
+        <p>Khu vực sản phẩm sử dụng layout riêng với CSS và JavaScript riêng.</p>
+    </article>
+    <article>
+        <h2>Area</h2>
+        <p>Admin và Customer được tách thành các vùng chức năng độc lập.</p>
+    </article>
+</section>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sản phẩm</title>
+    <link rel="stylesheet" href="~/css/NnmLayoutProduct.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="product-header">
+        <div class="product-container">
+            <div class="logo">NTU</div>
+            <div>
+                <h1>Nguyễn Ngọc Mạnh</h1>
+                <p>Lesson13 - Custom Layout</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="product-nav">
+        <div class="product-container nav-list">
+            <a asp-controller="NnmProducts" asp-action="Index">Danh sách sản phẩm</a>
+            <a asp-controller="NnmProducts" asp-action="Search">Tìm kiếm sản phẩm</a>
+            <a asp-controller="NnmProducts" asp-action="Hots">Sản phẩm bán chạy</a>
+            <a asp-controller="NnmHome" asp-action="Index">Về trang chủ</a>
+        </div>
+    </nav>
+
+    <main class="product-container product-main">
+        @RenderBody()
+    </main>
+
+    <footer class="product-footer">
+        &copy; 2026 - Nguyễn Ngọc Mạnh - 2410900051
+    </footer>
+
+    <script src="~/js/NnmLayout.js" asp-append-version="true"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="area-body">
+    <aside class="area-sidebar">
+        <h2>ADMIN</h2>
+        <a asp-area="Admin" asp-controller="Home" asp-action="Index">Tổng quan</a>
+        <a asp-area="" asp-controller="NnmProducts" asp-action="Index">Sản phẩm</a>
+        <a asp-area="" asp-controller="NnmHome" asp-action="Index">Trang chủ</a>
+    </aside>
+    <main class="area-content">
+        @RenderBody()
+    </main>
+    <script src="~/js/NnmLayout.js" asp-append-version="true"></script>
+</body>
+</html>
